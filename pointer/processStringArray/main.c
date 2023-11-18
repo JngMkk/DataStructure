@@ -23,3 +23,15 @@ int main() {
         printf("%s\n", pArray[i]);
     }
 }
+
+/*
+Korea
+Seoul
+Mapo
+152번지 2/3
+
+Korea
+Seoul
+Jongno
+152번지 2/3
+*/

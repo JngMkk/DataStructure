@@ -33,3 +33,12 @@ int main() {
 
     return 0;
 }
+
+/*
+pArray[0]의 주소: 0x16f3fea90, pArray[0]의 값: 0x100a03e40, pArray[0]의 참조 문자열: Korea, pArray[0]의 참조값: K
+pArray[1]의 주소: 0x16f3fea98, pArray[1]의 값: 0x100a03e46, pArray[1]의 참조 문자열: Seoul, pArray[1]의 참조값: S
+pp의 주소: 0x16f3fea80, pp의 값: 0x16f3fea90, pp의 1차 참조값: 0x100a03e40, pp의 1차 참조 문자열: Korea, pp의 2차 참조값: K
+
+pArray[0]: Korea
+**pp: Korea
+*/
