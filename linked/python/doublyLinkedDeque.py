@@ -1,18 +1,22 @@
 class DNode:
-    def __init__(self, elem, prev = None, next = None):
+    def __init__(self, elem, prev=None, next=None):
         self.data = elem
         self.prev = prev
         self.next = next
+
 
 # 이중연결리스트의 응용 : 연결된 덱
 class DoublyLinkedDeque:
     def __init__(self):
         self.front = None
         self.rear = None
+
     def isEmpty(self):
         return self.front == None
+
     def clear(self):
         self.front = self.rear = None
+
     def size(self):
         node = self.front
         count = 0
@@ -20,13 +24,15 @@ class DoublyLinkedDeque:
             node = node.next
             count += 1
         return count
-    def display(self, msg = 'LinkedDeque : '):
-        print(msg, end = '')
+
+    def display(self, msg="LinkedDeque : "):
+        print(msg, end="")
         node = self.front
         while not node == None:
-            print(node.data, end = ' ')
+            print(node.data, end=" ")
             node = node.next
         print()
+
     def addFront(self, item):
         node = DNode(item, None, self.front)
         if self.isEmpty():
@@ -34,6 +40,7 @@ class DoublyLinkedDeque:
         else:
             self.front.prev = node
             self.front = node
+
     def addRear(self, item):
         node = DNode(item, self.rear, None)
         if self.isEmpty():
@@ -41,6 +48,7 @@ class DoublyLinkedDeque:
         else:
             self.rear.next = node
             self.rear = node
+
     def deleteFront(self):
         if not self.isEmpty():
             data = self.front.data
@@ -50,6 +58,7 @@ class DoublyLinkedDeque:
             else:
                 self.front.prev = None
             return data
+
     def deleteRear(self):
         if not self.isEmpty():
             data = self.rear.data
