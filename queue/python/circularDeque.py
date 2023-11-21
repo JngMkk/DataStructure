@@ -9,24 +9,31 @@
 """
 # 원형 큐를 이용한 구현
 # 원형 큐에서 추가되는 연산 : delete_rear(), add_front(), get_rear()    전단, 후단 삽입, 삭제 가능해야 하므로
-from CircularQueue import CircularQueue
+from .circularQueue import CircularQueue
 
 MAX_QSIZE = 10
-class CircularDeque(CircularQueue):                 # 상속
+
+
+class CircularDeque(CircularQueue):  # 상속
     def __init__(self):
-        super().__init__()                          # 부모 클래스의 생성자 호출
+        super().__init__()  # 부모 클래스의 생성자 호출
+
     def addRear(self, item):
         self.enqueue(item)
+
     def deleteFront(self):
         return self.dequeue()
+
     def getFront(self):
         return self.peek()
+
     def addFront(self, item):
         if not self.isFull():
             self.items[self.front] = item
-            self.front = self.front - 1             # 반시계 방향으로 회전
+            self.front = self.front - 1  # 반시계 방향으로 회전
             if self.front < 0:
                 self.front = MAX_QSIZE - 1
+
     def deleteRear(self):
         if not self.isEmpty():
             item = self.items[self.rear]
@@ -34,8 +41,10 @@ class CircularDeque(CircularQueue):                 # 상속
             if self.rear < 0:
                 self.rear = MAX_QSIZE - 1
             return item
-    def getRear(self):                              # 후단 peek
+
+    def getRear(self):  # 후단 peek
         return self.items[self.rear]
+
 
 # 테스트
 dq = CircularDeque()

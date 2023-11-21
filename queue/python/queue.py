@@ -12,12 +12,12 @@
 import queue
 
 # 테스트
-Q = queue.Queue(maxsize = 20)
+Q = queue.Queue(maxsize=20)
 for i in range(1, 10):
-    Q.put(i)                        # 삽입
-print('큐의 내용 : ', end = '')
+    Q.put(i)  # 삽입
+print("큐의 내용 : ", end="")
 for _ in range(1, 10):
-    print(Q.get(), end = ' ')       # 삭제
+    print(Q.get(), end=" ")  # 삭제
 print()
 
 # deque 라이브러리 사용
@@ -27,15 +27,15 @@ queue = deque()
 
 # 삭제 |출구| <= 삽입(5) - 삽입(2) - 삽입(3) - 삽입(7) - 삭제() - 삽입(1) - 삽입(4) - 삭제() |입구| <= 삽입
 # 시간복잡도 O(1)
-queue.append(5)     # <<<< 삽입
+queue.append(5)  # <<<< 삽입
 queue.append(2)
 queue.append(3)
 queue.append(7)
-queue.popleft()     # <<<< 삭제, 5 삭제
+queue.popleft()  # <<<< 삭제, 5 삭제
 queue.append(1)
 queue.append(4)
 queue.popleft()
 
-print(queue)    # 먼저 들어온 순서대로 출력         deque([3, 7, 1, 4])
-queue.reverse() # 역순으로 바꾸기
-print(queue)    # 나중에 들어온 원소부터 출력       deque([4, 1, 7, 3])
+print(queue)  # 먼저 들어온 순서대로 출력         deque([3, 7, 1, 4])
+queue.reverse()  # 역순으로 바꾸기
+print(queue)  # 나중에 들어온 원소부터 출력       deque([4, 1, 7, 3])
