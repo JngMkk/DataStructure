@@ -3,10 +3,11 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         }
     },
 
     "black-formatter.args": ["--config", "${workspaceFolder}/pyproject.toml"],
     "isort.args": ["--profile", "black"],
+    "flake8.args": ["--config", "${workspaceFolder}/.flake8"]
 }
